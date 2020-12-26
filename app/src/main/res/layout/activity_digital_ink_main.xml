@@ -202,7 +202,7 @@
     <com.google.mlkit.samples.vision.digitalink.DrawingView
         android:id="@+id/drawing_view"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="0dp"
         android:layout_weight="1"
         android:background="#80FFFFFF" />
 
