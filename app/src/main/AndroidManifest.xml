@@ -20,7 +20,8 @@
         tools:replace="android:label"
         android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
 
-        <activity android:name=".HomeScreen">
+        <activity android:name=".HomeScreen"
+            android:screenOrientation="portrait">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,10 +31,12 @@
         </activity>
 
         <activity android:name=".SignIn"
+            android:screenOrientation="portrait"
 
             ></activity>
 
         <activity android:name=".SignUp"
+            android:screenOrientation="portrait"
 
             ></activity>
 
@@ -41,7 +44,6 @@
             android:name=".DigitalInkMainActivity"
             android:label="INK"
             android:exported="true"
-            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
             android:parentActivityName=".HomeScreen">
         </activity>
