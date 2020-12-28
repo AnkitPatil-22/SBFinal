@@ -32,27 +32,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:orientation="horizontal"><![CDATA[
+            android:orientation="horizontal">
 
-            ]]><ImageButton
-                android:id="@+id/exit_btn"
-                android:layout_width="139dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginEnd="5dp"
-                android:layout_marginRight="5dp"
-                android:background="@color/common_google_signin_btn_text_dark_default"
-                android:contentDescription="@string/todo"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.03"
-                app:srcCompat="@drawable/arrow_back" />
 
             <!--                <ImageButton-->
             <!--                    android:id="@+id/new_btn"-->
@@ -77,15 +58,20 @@
 
 
             <ImageButton
-                android:id="@+id/save_btn"
-                android:layout_width="148dp"
+                android:id="@+id/exit_btn"
+                android:layout_width="130dp"
                 android:layout_height="50dp"
-                android:layout_marginEnd="5dp"
-                android:layout_marginRight="5dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
                 android:background="@color/common_google_signin_btn_text_dark_default"
-                android:contentDescription="@string/save"
-                android:paddingTop="5dp"
-                android:src="@drawable/save" />
+                android:contentDescription="@string/todo"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.03"
+                app:srcCompat="@drawable/arrow_back" />
 
             <!--                <Button-->
             <!--                    android:id="@+id/recognize_button"-->
@@ -118,28 +104,37 @@
 <!--                android:src="@drawable/redo"-->
 <!--                android:text="@string/redo" />-->
 
-            <Button
-                android:id="@+id/clear_button"
-
-                android:layout_width="370dp"
+            <ImageButton
+                android:id="@+id/save_btn"
+                android:layout_width="130dp"
                 android:layout_height="50dp"
-                android:layout_marginStart="5dp"
-                android:layout_marginLeft="5dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:background="@color/common_google_signin_btn_text_dark_default"
+                android:contentDescription="@string/save"
+                android:src="@drawable/save" />
+
+            <ImageButton
+                android:id="@+id/clear_button"
+                android:layout_width="130dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginRight="10dp"
-                android:layout_weight="1"
-                android:background="@drawable/exit"
+
+                android:background="@color/common_google_signin_btn_text_dark_default"
                 android:onClick="clearClick"
-                android:paddingLeft="50dp"
-                android:paddingRight="50dp"
-                android:src="@drawable/clear" />
+                android:src="@drawable/exit" />
 
             <ImageButton
                 android:id="@+id/download_button"
-                android:layout_width="138dp"
+                android:layout_width="130dp"
                 android:layout_height="50dp"
-                android:layout_marginStart="4dp"
-                android:layout_marginLeft="4dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
                 android:background="#FFFFFF"
                 android:contentDescription="@string/todo"
                 android:onClick="downloadClick"
@@ -153,8 +148,12 @@
 
             <ImageButton
                 android:id="@+id/delete_button"
-                android:layout_width="142dp"
+                android:layout_width="130dp"
                 android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
                 android:background="#FFFFFF"
                 android:contentDescription="@string/todo"
                 android:onClick="deleteClick"
