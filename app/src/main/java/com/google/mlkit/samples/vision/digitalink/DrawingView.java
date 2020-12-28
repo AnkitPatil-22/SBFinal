@@ -35,7 +35,7 @@ public class DrawingView extends View implements ContentChangedListener, View.On
     private static final int STROKE_WIDTH_DP = 3;
     private static final int MIN_BB_WIDTH = 10;
     private static final int MIN_BB_HEIGHT = 10;
-    private static final int MAX_BB_WIDTH = 999;
+    private static final int MAX_BB_WIDTH = 2000;
     private static final int MAX_BB_HEIGHT = 500;
 
     private final Paint recognizedStrokePaint;
