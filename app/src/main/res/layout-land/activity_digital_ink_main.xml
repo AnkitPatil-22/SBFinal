@@ -36,7 +36,7 @@
 
             ]]><ImageButton
                 android:id="@+id/exit_btn"
-                android:layout_width="48dp"
+                android:layout_width="139dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginLeft="10dp"
@@ -65,20 +65,20 @@
             <!--                    android:src="@drawable/new_folder" />-->
 
 
-            <ImageButton
-                android:id="@+id/draw_btn"
-                android:layout_width="62dp"
-                android:layout_height="50dp"
-                android:layout_marginEnd="5dp"
-                android:layout_marginRight="0dp"
-                android:background="@color/common_google_signin_btn_text_dark_default"
-                android:contentDescription="@string/brush"
-                android:src="@drawable/pen" />
+<!--            <ImageButton-->
+<!--                android:id="@+id/draw_btn"-->
+<!--                android:layout_width="62dp"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:layout_marginEnd="5dp"-->
+<!--                android:layout_marginRight="0dp"-->
+<!--                android:background="@color/common_google_signin_btn_text_dark_default"-->
+<!--                android:contentDescription="@string/brush"-->
+<!--                android:src="@drawable/pen" />-->
 
 
             <ImageButton
                 android:id="@+id/save_btn"
-                android:layout_width="62dp"
+                android:layout_width="148dp"
                 android:layout_height="50dp"
                 android:layout_marginEnd="5dp"
                 android:layout_marginRight="5dp"
@@ -97,31 +97,31 @@
             <!--                    android:text="Recognize"-->
             <!--                    android:textColor="#FFFFFF" />-->
 
-            <ImageButton
-                android:id="@+id/undo"
+<!--            <ImageButton-->
+<!--                android:id="@+id/undo"-->
 
-                android:layout_width="8dp"
-                android:layout_height="50dp"
-                android:layout_weight="1"
-                android:background="@android:color/background_light"
-                android:contentDescription="@string/todo"
-                android:src="@drawable/undo"
-                android:text="@string/undo" />
+<!--                android:layout_width="8dp"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:layout_weight="1"-->
+<!--                android:background="@android:color/background_light"-->
+<!--                android:contentDescription="@string/todo"-->
+<!--                android:src="@drawable/undo"-->
+<!--                android:text="@string/undo" />-->
 
-            <ImageButton
-                android:id="@+id/redo"
-                android:layout_width="7dp"
-                android:layout_height="50dp"
-                android:layout_weight="1"
-                android:background="@android:color/background_light"
-                android:contentDescription="@string/todo"
-                android:src="@drawable/redo"
-                android:text="@string/redo" />
+<!--            <ImageButton-->
+<!--                android:id="@+id/redo"-->
+<!--                android:layout_width="7dp"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:layout_weight="1"-->
+<!--                android:background="@android:color/background_light"-->
+<!--                android:contentDescription="@string/todo"-->
+<!--                android:src="@drawable/redo"-->
+<!--                android:text="@string/redo" />-->
 
             <Button
                 android:id="@+id/clear_button"
 
-                android:layout_width="4dp"
+                android:layout_width="370dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="5dp"
                 android:layout_marginLeft="5dp"
@@ -133,6 +133,38 @@
                 android:paddingLeft="50dp"
                 android:paddingRight="50dp"
                 android:src="@drawable/clear" />
+
+            <ImageButton
+                android:id="@+id/download_button"
+                android:layout_width="138dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginLeft="4dp"
+                android:background="#FFFFFF"
+                android:contentDescription="@string/todo"
+                android:onClick="downloadClick"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/delete_button"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0"
+                app:srcCompat="@drawable/download" />
+
+            <ImageButton
+                android:id="@+id/delete_button"
+                android:layout_width="142dp"
+                android:layout_height="50dp"
+                android:background="#FFFFFF"
+                android:contentDescription="@string/todo"
+                android:onClick="deleteClick"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.044"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0"
+                app:srcCompat="@drawable/delete" />
 
         </LinearLayout>
 
@@ -269,38 +301,6 @@
                 android:layout_height="wrap_content"
 
                 android:background="@android:color/background_light">
-
-                <ImageButton
-                    android:id="@+id/download_button"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_marginStart="4dp"
-                    android:layout_marginLeft="4dp"
-                    android:background="#FFFFFF"
-                    android:contentDescription="@string/todo"
-                    android:onClick="downloadClick"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toEndOf="@+id/delete_button"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="1.0"
-                    app:srcCompat="@drawable/download" />
-
-                <ImageButton
-                    android:id="@+id/delete_button"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:background="#FFFFFF"
-                    android:contentDescription="@string/todo"
-                    android:onClick="deleteClick"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.044"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="1.0"
-                    app:srcCompat="@drawable/delete" />
 
 
             </LinearLayout>

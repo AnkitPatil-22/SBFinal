@@ -183,17 +183,17 @@ public class DrawingView extends View implements ContentChangedListener, View.On
 //        newFunc(content);
         contents.add(content);
         System.out.println("The CONTENTS are " + contents);
-        if (onClickUndo()){
-            onClickUndo();
-            return content;
-        }
-        else if (onClickRedo()){
-            onClickRedo();
-            return content;
-        }
-
-
-        invalidate();
+//        if (onClickUndo()){
+//            onClickUndo();
+//            return content;
+//        }
+//        else if (onClickRedo()){
+//            onClickRedo();
+//            return content;
+//        }
+//
+//
+//        invalidate();
         return content;
     }
 
@@ -341,38 +341,38 @@ public class DrawingView extends View implements ContentChangedListener, View.On
         return true;
     }
 
-    public boolean onClickUndo () {
-        System.out.println("The contents in undofunc is" + contents);
-        if (contents.size()>0)
-        {
-            undonecontents.add((List) contents.remove(contents.size()-1));
-            System.out.println("The Undonecontents in undofunc is" + undonecontents);
-            invalidate();
-        }
-        else
-        {
-
-        }
-        //toast the user
-        return false;
-    }
-
-    public boolean onClickRedo (){
-        System.out.println("The undonecontents in redofunc is" + undonecontents);
-        if (undonecontents.size()>0)
-        {
-            contents.add(undonecontents.remove(undonecontents.size()-1));
-            System.out.println("The contents in redofunc is" + contents);
-            System.out.println("  " );
-            invalidate();
-        }
-        else
-        {
-
-        }
-        //toast the user
-        return false;
-    }
+//    public boolean onClickUndo () {
+//        System.out.println("The contents in undofunc is" + contents);
+//        if (contents.size()>0)
+//        {
+//            undonecontents.add((List) contents.remove(contents.size()-1));
+//            System.out.println("The Undonecontents in undofunc is" + undonecontents);
+//            invalidate();
+//        }
+//        else
+//        {
+//
+//        }
+//        //toast the user
+//        return false;
+//    }
+//
+//    public boolean onClickRedo (){
+//        System.out.println("The undonecontents in redofunc is" + undonecontents);
+//        if (undonecontents.size()>0)
+//        {
+//            contents.add(undonecontents.remove(undonecontents.size()-1));
+//            System.out.println("The contents in redofunc is" + contents);
+//            System.out.println("  " );
+//            invalidate();
+//        }
+//        else
+//        {
+//
+//        }
+//        //toast the user
+//        return false;
+//    }
 
 
     @Override

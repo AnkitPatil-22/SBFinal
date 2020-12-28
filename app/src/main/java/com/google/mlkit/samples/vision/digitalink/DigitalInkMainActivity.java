@@ -42,7 +42,7 @@ public class DigitalInkMainActivity extends AppCompatActivity implements
 //    PaintView mPaintView;
 //    int colorBackground,colorBrush;
 
-    private ImageButton currentStrokePaint, drawBtn,baru,erase,save;
+    private ImageButton currentStrokePaint,baru,erase,save;
     private DrawingView drawingView;
     ImageView iv1;
 
@@ -80,36 +80,36 @@ public class DigitalInkMainActivity extends AppCompatActivity implements
         drawingView = (DrawingView)findViewById(R.id.drawing_view);
 //        RelativeLayout parent = (RelativeLayout) findViewById(R.id.drawing_view);
 //        DrawView = new DrawingView(this, textPaint);
-        drawBtn = (ImageButton)findViewById(R.id.draw_btn);
+//        drawBtn = (ImageButton)findViewById(R.id.draw_btn);
         //baru = (ImageButton)findViewById(R.id.new_btn);
         erase = (ImageButton)findViewById(R.id.erase_btn);
         save = (ImageButton)findViewById(R.id.save_btn);
         LinearLayout paintLayout = findViewById(R.id.paint_colors);
         currentStrokePaint = (ImageButton)paintLayout.getChildAt(0);
         currentStrokePaint.setImageDrawable(getResources().getDrawable(R.drawable.paint_pressed));
-        drawBtn.setOnClickListener(this);
+//        drawBtn.setOnClickListener(this);
 //        baru.setOnClickListener(this);
 //        erase.setOnClickListener(this);
         save.setOnClickListener(this);
-        ImageButton btn_undo=(ImageButton) findViewById(R.id.undo);
-        btn_undo.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                // TODO Auto-generated method stub
-                drawingView.onClickUndo();
-            }
-        });
-
-        ImageButton btn_redo=(ImageButton) findViewById(R.id.redo);
-        btn_redo.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                // TODO Auto-generated method stub
-                drawingView.onClickRedo();
-            }
-        });
+//        ImageButton btn_undo=(ImageButton) findViewById(R.id.undo);
+//        btn_undo.setOnClickListener(new View.OnClickListener() {
+//
+//            @Override
+//            public void onClick(View v) {
+//                // TODO Auto-generated method stub
+//                drawingView.onClickUndo();
+//            }
+//        });
+//
+//        ImageButton btn_redo=(ImageButton) findViewById(R.id.redo);
+//        btn_redo.setOnClickListener(new View.OnClickListener() {
+//
+//            @Override
+//            public void onClick(View v) {
+//                // TODO Auto-generated method stub
+//                drawingView.onClickRedo();
+//            }
+//        });
 
         Spinner languageSpinner = findViewById(R.id.Languages_Spinner);
 
@@ -180,12 +180,12 @@ public class DigitalInkMainActivity extends AppCompatActivity implements
         strokeManager.deleteActiveModel();
     }
 
-    public void undoClick(View v){
-        drawingView.onClickUndo();
-    }
-    public void redoClick(View v){
-        drawingView.onClickRedo();
-    }
+//    public void undoClick(View v){
+//        drawingView.onClickUndo();
+//    }
+//    public void redoClick(View v){
+//        drawingView.onClickRedo();
+//    }
 
 
     private static class ModelLanguageContainer implements Comparable<ModelLanguageContainer> {

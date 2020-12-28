@@ -90,25 +90,25 @@ public class MainScreen extends AppCompatActivity implements
 //        baru.setOnClickListener(this);
         erase.setOnClickListener(this);
         save.setOnClickListener(this);
-        ImageButton btn_undo=(ImageButton) findViewById(R.id.undo);
-        btn_undo.setOnClickListener(new View.OnClickListener() {
+//        ImageButton btn_undo=(ImageButton) findViewById(R.id.undo);
+//        btn_undo.setOnClickListener(new View.OnClickListener() {
 
-            @Override
-            public void onClick(View v) {
-                // TODO Auto-generated method stub
-                drawingView.onClickUndo();
-            }
-        });
-
-        ImageButton btn_redo=(ImageButton) findViewById(R.id.redo);
-        btn_redo.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                // TODO Auto-generated method stub
-                drawingView.onClickRedo();
-            }
-        });
+//            @Override
+//            public void onClick(View v) {
+//                // TODO Auto-generated method stub
+//                drawingView.onClickUndo();
+//            }
+//        });
+//
+//        ImageButton btn_redo=(ImageButton) findViewById(R.id.redo);
+//        btn_redo.setOnClickListener(new View.OnClickListener() {
+//
+//            @Override
+//            public void onClick(View v) {
+//                // TODO Auto-generated method stub
+//                drawingView.onClickRedo();
+//            }
+//        });
 
         Spinner languageSpinner = findViewById(R.id.Languages_Spinner);
 
@@ -179,12 +179,12 @@ public class MainScreen extends AppCompatActivity implements
         strokeManager.deleteActiveModel();
     }
 
-    public void undoClick(View v){
-        drawingView.onClickUndo();
-    }
-    public void redoClick(View v){
-        drawingView.onClickRedo();
-    }
+//    public void undoClick(View v){
+//        drawingView.onClickUndo();
+//    }
+//    public void redoClick(View v){
+//        drawingView.onClickRedo();
+//    }
 
 
     private static class ModelLanguageContainer implements Comparable<ModelLanguageContainer> {
