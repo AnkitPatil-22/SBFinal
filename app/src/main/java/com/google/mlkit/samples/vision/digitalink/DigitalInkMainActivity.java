@@ -1,9 +1,11 @@
 package com.google.mlkit.samples.vision.digitalink;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
@@ -13,6 +15,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -23,30 +26,28 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.VisibleForTesting;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSortedSet;
 import com.google.mlkit.samples.vision.digitalink.StrokeManager.DownloadedModelsChangedListener;
 import com.google.mlkit.vision.digitalink.DigitalInkRecognitionModelIdentifier;
 
+import java.util.List;
 import java.util.Locale;
 import java.util.Set;
 import java.util.UUID;
-
-//import android.widget.RelativeLayout;
 
 /** Main activity which creates a StrokeManager and connects it to the DrawingView. */
 @SuppressWarnings("ALL")
 public class DigitalInkMainActivity extends AppCompatActivity implements
         DownloadedModelsChangedListener, View.OnClickListener {
-//    PaintView mPaintView;
-//    int colorBackground,colorBrush;
 
+    private int STORAGE_PERMISSION_CODE = 1;
     private ImageButton currentStrokePaint,baru,erase,save;
     private DrawingView drawingView;
     ImageView iv1;
-
-
 
     private static final String TAG = "MLKDI.Activity";
     private static final ImmutableMap<String, String> NON_TEXT_MODELS =
@@ -68,48 +69,60 @@ public class DigitalInkMainActivity extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_digital_ink_main);
 
+        //TO ASK PERMISSION FOR STORAGE
+
+//        Button buttonRequest = findViewById(R.id.save_btn);
+//        buttonRequest.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (ContextCompat.checkSelfPermission(DigitalInkMainActivity.this,
+//                        Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+//                    Toast.makeText(DigitalInkMainActivity.this, "You have already granted this permission!",
+//                            Toast.LENGTH_SHORT).show();
+//                } else {
+//                    requestStoragePermission();
+//                }
+//            }
+//        });
+//    }
+//    private void requestStoragePermission() {
+//        if (ActivityCompat.shouldShowRequestPermissionRationale(this,
+//                Manifest.permission.READ_EXTERNAL_STORAGE)) {
+//            new androidx.appcompat.app.AlertDialog.Builder(this)
+//                    .setTitle("Permission needed")
+//                    .setMessage("This permission is needed because of this and that")
+//                    .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+//                        @Override
+//                        public void onClick(DialogInterface dialog, int which) {
+//                            ActivityCompat.requestPermissions(DigitalInkMainActivity.this,
+//                                    new String[] {Manifest.permission.READ_EXTERNAL_STORAGE}, STORAGE_PERMISSION_CODE);
+//                        }
+//                    })
+//                    .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+//                        @Override
+//                        public void onClick(DialogInterface dialog, int which) {
+//                            dialog.dismiss();
+//                        }
+//                    })
+//                    .create().show();
+//        } else {
+//            ActivityCompat.requestPermissions(this,
+//                    new String[] {Manifest.permission.READ_EXTERNAL_STORAGE}, STORAGE_PERMISSION_CODE);
+//        }
+
         ExitButton = findViewById(R.id.exit_btn);
         ExitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent intent = new Intent(DigitalInkMainActivity.this, HomeScreen.class);
-//                startActivity(intent);
                 finish();
             }
         });
         drawingView = (DrawingView)findViewById(R.id.drawing_view);
-//        RelativeLayout parent = (RelativeLayout) findViewById(R.id.drawing_view);
-//        DrawView = new DrawingView(this, textPaint);
-//        drawBtn = (ImageButton)findViewById(R.id.draw_btn);
-        //baru = (ImageButton)findViewById(R.id.new_btn);
-        erase = (ImageButton)findViewById(R.id.erase_btn);
         save = (ImageButton)findViewById(R.id.save_btn);
         LinearLayout paintLayout = findViewById(R.id.paint_colors);
         currentStrokePaint = (ImageButton)paintLayout.getChildAt(0);
         currentStrokePaint.setImageDrawable(getResources().getDrawable(R.drawable.paint_pressed));
-//        drawBtn.setOnClickListener(this);
-//        baru.setOnClickListener(this);
-//        erase.setOnClickListener(this);
         save.setOnClickListener(this);
-//        ImageButton btn_undo=(ImageButton) findViewById(R.id.undo);
-//        btn_undo.setOnClickListener(new View.OnClickListener() {
-//
-//            @Override
-//            public void onClick(View v) {
-//                // TODO Auto-generated method stub
-//                drawingView.onClickUndo();
-//            }
-//        });
-//
-//        ImageButton btn_redo=(ImageButton) findViewById(R.id.redo);
-//        btn_redo.setOnClickListener(new View.OnClickListener() {
-//
-//            @Override
-//            public void onClick(View v) {
-//                // TODO Auto-generated method stub
-//                drawingView.onClickRedo();
-//            }
-//        });
 
         Spinner languageSpinner = findViewById(R.id.Languages_Spinner);
 
@@ -162,7 +175,6 @@ public class DigitalInkMainActivity extends AppCompatActivity implements
             imgView.setImageDrawable(getResources().getDrawable(R.drawable.paint_pressed));
             currentStrokePaint.setImageDrawable(getResources().getDrawable(R.drawable.paint));
             currentStrokePaint=(ImageButton)view;
-
         }
     }
 
@@ -179,14 +191,6 @@ public class DigitalInkMainActivity extends AppCompatActivity implements
     public void deleteClick(View v) {
         strokeManager.deleteActiveModel();
     }
-
-//    public void undoClick(View v){
-//        drawingView.onClickUndo();
-//    }
-//    public void redoClick(View v){
-//        drawingView.onClickRedo();
-//    }
-
 
     private static class ModelLanguageContainer implements Comparable<ModelLanguageContainer> {
         private final String label;
@@ -310,48 +314,33 @@ public class DigitalInkMainActivity extends AppCompatActivity implements
 
     @Override
     public void onClick(View v) {
-        if(v.getId()==R.id.draw_btn){
-            drawingView.setupDrawing();
-        }
-        if(v.getId()==R.id.erase_btn){
-            drawingView.setErase(true);
-            drawingView.setBrushSize(drawingView.getLastBrushSize());
-        }
-//        if(v.getId()==R.id.new_btn){
-//            AlertDialog.Builder newDialog = new AlertDialog.Builder(this);
-//            newDialog.setTitle("New drawing");
-//            newDialog.setMessage("Start new drawing (you will lose the current drawing)?");
-//            newDialog.setPositiveButton("Yes", (dialog, which) -> {
-//                drawingView.clear();
-//                dialog.dismiss();
-//            });
-//            newDialog.setNegativeButton("No", (dialog, which) -> dialog.cancel());
-//            newDialog.show();
-//        }
+
         if(v.getId()==R.id.save_btn){
             AlertDialog.Builder saveDialog = new AlertDialog.Builder(this);
             saveDialog.setTitle("Save drawing");
-            saveDialog.setMessage("Save drawing to device Gallery?");
+            //saveDialog.setMessage("Save drawing to device Gallery?");
             saveDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                @Override
                 public void onClick(DialogInterface dialog, int which) {
                     drawingView.setDrawingCacheEnabled(true);
 
                     String imgSaved = MediaStore.Images.Media.insertImage(
                             getContentResolver(), drawingView.getDrawingCache(),
                             UUID.randomUUID().toString() + ".png", "drawing");
-                    System.out.println(imgSaved);
+                    //System.out.println(imgSaved);
                     if (imgSaved != null) {
                         Toast savedToast = Toast.makeText(getApplicationContext(),
-                                "Drawing saved to Gallery!", Toast.LENGTH_SHORT);
+                                "Drawing saved to Gallery!", Toast.LENGTH_LONG);
                         savedToast.show();
                     } else {
                         Toast unsavedToast = Toast.makeText(getApplicationContext(),
-                                "Oops! Image could not be saved.", Toast.LENGTH_SHORT);
+                                "Oops! Image could not be saved.", Toast.LENGTH_LONG);
                         unsavedToast.show();
                     }
                     drawingView.destroyDrawingCache();
                 }
-            }).setNegativeButton("No", new DialogInterface.OnClickListener() {
+            });
+            saveDialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int which) {
                     dialog.cancel();
                 }

@@ -55,8 +55,8 @@ public class DrawingView extends View implements ContentChangedListener, View.On
 //    private Path currentStroke;
 
 
-    private Canvas drawCanvas;
-    private Bitmap canvasBitmap;
+    public Canvas drawCanvas;
+    public Bitmap canvasBitmap;
     private StrokeManager strokeManager;
 //    private Paint paint;
 

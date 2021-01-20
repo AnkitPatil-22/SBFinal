@@ -120,7 +120,6 @@
 
             <ImageButton
                 android:id="@+id/clear_button"
-
                 android:layout_width="80dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="10dp"
