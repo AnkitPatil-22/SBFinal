@@ -14,3 +14,5 @@ The app converts your digital handwriting into much more readable format, so the
 * for online classes and meetings as a "smart" drawing app.
 * for digital presentation scenarios in offline mode.
 
+## Quick Demo:
+![alt-text](https://github.com/INK1234/SBFinal/blob/master/Smart_Board_1.gif)
