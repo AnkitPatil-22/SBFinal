@@ -15,4 +15,5 @@ The app converts your digital handwriting into much more readable format, so the
 * for digital presentation scenarios in offline mode.
 
 ## Quick Demo:
-![alt-text](https://github.com/INK1234/SBFinal/blob/master/Smart_Board_1.gif)
+
+<img src="Smart_Board_1.gif" width="256"/>
