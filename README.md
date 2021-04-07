@@ -17,3 +17,8 @@ The app converts your digital handwriting into much more readable format, so the
 ## Quick Demo:
 
 <img src="Smart_Board_1.gif" width="256"/>
+
+## References:
+* https://research.aimultiple.com/handwriting-recognition/
+* https://docs.microsoft.com/en-us/windows/uwp/design/input/convert-ink-to-text#free-form-recognition-with-ink-analysis
+* https://developers.google.com/android/reference/com/google/mlkit/vision/digitalink/DigitalInkRecognizer
