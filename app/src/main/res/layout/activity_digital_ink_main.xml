@@ -116,11 +116,13 @@
                 android:contentDescription="@string/save"
                 android:paddingLeft="50dp"
                 android:paddingRight="51dp"
-                android:src="@drawable/save" />
+                android:src="@drawable/save"
+                android:paddingStart="50dp"
+                android:paddingEnd="51dp" />
 
             <ImageButton
                 android:id="@+id/clear_button"
-                android:layout_width="80dp"
+                android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginLeft="10dp"
@@ -129,7 +131,8 @@
                 android:onClick="clearClick"
                 android:paddingLeft="50dp"
                 android:paddingRight="50dp"
-                android:src="@drawable/exit" />
+                android:src="@drawable/exit"
+                android:contentDescription="@string/todo" />
 
             <ImageButton
                 android:id="@+id/download_button"
@@ -180,6 +183,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_weight="3"
+                android:background="#FFFFFF"
                 android:text="@string/select_language"
                 app:layout_constraintEnd_toEndOf="@+id/drawing_view"
                 app:layout_constraintHorizontal_bias="1.0"
@@ -203,7 +207,7 @@
     <com.google.mlkit.samples.vision.digitalink.DrawingView
         android:id="@+id/drawing_view"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="0dp"
         android:layout_weight="1"
         android:background="#80FFFFFF" />
 
