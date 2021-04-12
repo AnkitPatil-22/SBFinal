@@ -5,7 +5,7 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 29
     defaultConfig {
-        applicationId "com.google.mlkit.samples.vision.digitalink"
+        applicationId 'com.smartboard.samples.sbfinal'
         minSdkVersion 16
         targetSdkVersion 29
         multiDexEnabled true

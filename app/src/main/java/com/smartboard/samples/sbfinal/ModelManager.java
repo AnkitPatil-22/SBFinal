@@ -1,4 +1,4 @@
-package com.google.mlkit.samples.vision.digitalink;
+package com.smartboard.samples.sbfinal;
 
 import android.util.Log;
 import com.google.android.gms.tasks.Task;

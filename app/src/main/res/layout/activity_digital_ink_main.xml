@@ -13,7 +13,7 @@
         android:orientation="vertical"
         tools:ignore="ExtraText,UselessParent">
 
-        <com.google.mlkit.samples.vision.digitalink.StatusTextView
+        <com.smartboard.samples.sbfinal.StatusTextView
             android:id="@+id/status_text_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -204,7 +204,7 @@
     </LinearLayout>
 
 
-    <com.google.mlkit.samples.vision.digitalink.DrawingView
+    <com.smartboard.samples.sbfinal.DrawingView
         android:id="@+id/drawing_view"
         android:layout_width="match_parent"
         android:layout_height="0dp"

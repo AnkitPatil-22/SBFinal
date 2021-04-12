@@ -1,4 +1,4 @@
-package com.google.mlkit.samples.vision.digitalink.common;
+package com.smartboard.samples.sbfinal.common;
 
 public class Common {
     public static final String BRUSH = "brush";
