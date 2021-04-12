@@ -1,11 +1,12 @@
 apply plugin: "com.android.application"
+apply plugin: 'com.google.gms.google-services'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion 29
     defaultConfig {
-        applicationId "com.google.mlkit.samples.vision.digitalink"
+        applicationId 'com.smartboard.samples.sbfinal'
         minSdkVersion 16
         targetSdkVersion 29
         multiDexEnabled true
@@ -49,6 +50,8 @@ dependencies {
     implementation 'com.google.mlkit:digital-ink-recognition:16.1.0'
     implementation 'com.toptoche.searchablespinner:searchablespinnerlibrary:1.3.1'
     implementation 'com.muddzdev:regret:1.3.1'
+    implementation platform('com.google.firebase:firebase-bom:27.0.0')
+    implementation 'com.google.firebase:firebase-analytics'
 
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.2.1'
@@ -61,5 +64,6 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'com.google.truth:truth:1.0.1'
+
 
 }

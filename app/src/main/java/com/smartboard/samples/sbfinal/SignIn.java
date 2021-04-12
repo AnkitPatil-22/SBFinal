@@ -1,4 +1,4 @@
-package com.google.mlkit.samples.vision.digitalink;
+package com.smartboard.samples.sbfinal;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,30 +8,30 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class SignUp extends AppCompatActivity {
+import com.smartboard.samples.sbfinal.R;
+
+public class SignIn extends AppCompatActivity {
 
     ImageView backButton;
-    TextView SignInButton;
-
+    TextView RegisterButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.signup);
+        setContentView(R.layout.signin);
 
         backButton = findViewById(R.id.back_btn);
         backButton.setOnClickListener(view -> {
-//            Intent intent = new Intent(SignUp.this, HomeScreen.class);
+//            Intent intent = new Intent(SignIn.this, HomeScreen.class);
 //            startActivity(intent);
             finish();
         });
 
-        SignInButton = findViewById(R.id.login);
-        SignInButton.setOnClickListener(new View.OnClickListener() {
+        RegisterButton = findViewById(R.id.register);
+        RegisterButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent intent = new Intent(SignUp.this, SignIn.class);
-//                startActivity(intent);
-                finish();
+                Intent intent = new Intent(SignIn.this, SignUp.class);
+                startActivity(intent);
             }
         });
     }

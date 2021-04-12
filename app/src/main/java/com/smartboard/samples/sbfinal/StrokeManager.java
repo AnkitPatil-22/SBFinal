@@ -1,4 +1,4 @@
-package com.google.mlkit.samples.vision.digitalink;
+package com.smartboard.samples.sbfinal;
 
 import android.graphics.Canvas;
 import android.os.Handler;
@@ -13,7 +13,6 @@ import com.google.android.gms.tasks.Tasks;
 import com.google.mlkit.vision.digitalink.Ink;
 import com.google.mlkit.vision.digitalink.Ink.Point;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;

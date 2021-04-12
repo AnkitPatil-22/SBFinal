@@ -1,4 +1,4 @@
-package com.google.mlkit.samples.vision.digitalink;
+package com.smartboard.samples.sbfinal;
 
 import android.util.Log;
 
@@ -11,7 +11,7 @@ import com.google.mlkit.vision.digitalink.Ink;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import static com.google.mlkit.samples.vision.digitalink.RecognitionTask.RecognizedInk.curr_text;
+import static com.smartboard.samples.sbfinal.RecognitionTask.RecognizedInk.curr_text;
 
 /** Task to run asynchronously to obtain recognition results. */
 @SuppressWarnings("ALL")

@@ -1,11 +1,8 @@
-package com.google.mlkit.samples.vision.digitalink;
+package com.smartboard.samples.sbfinal;
 
-import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
@@ -15,7 +12,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -26,15 +22,13 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.VisibleForTesting;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSortedSet;
-import com.google.mlkit.samples.vision.digitalink.StrokeManager.DownloadedModelsChangedListener;
+import com.smartboard.samples.sbfinal.R;
+import com.smartboard.samples.sbfinal.StrokeManager.DownloadedModelsChangedListener;
 import com.google.mlkit.vision.digitalink.DigitalInkRecognitionModelIdentifier;
 
-import java.util.List;
 import java.util.Locale;
 import java.util.Set;
 import java.util.UUID;
