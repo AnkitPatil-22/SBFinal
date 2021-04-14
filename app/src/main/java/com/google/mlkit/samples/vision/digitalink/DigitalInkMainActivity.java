@@ -44,7 +44,7 @@ import java.util.UUID;
 public class DigitalInkMainActivity extends AppCompatActivity implements
         DownloadedModelsChangedListener, View.OnClickListener {
 
-    private int STORAGE_PERMISSION_CODE = 1;
+//    private int STORAGE_PERMISSION_CODE = 1;
     private ImageButton currentStrokePaint,baru,erase,save;
     private DrawingView drawingView;
     ImageView iv1;
@@ -109,6 +109,8 @@ public class DigitalInkMainActivity extends AppCompatActivity implements
 //            ActivityCompat.requestPermissions(this,
 //                    new String[] {Manifest.permission.READ_EXTERNAL_STORAGE}, STORAGE_PERMISSION_CODE);
 //        }
+
+//        END
 
         ExitButton = findViewById(R.id.exit_btn);
         ExitButton.setOnClickListener(new View.OnClickListener() {
@@ -334,7 +336,7 @@ public class DigitalInkMainActivity extends AppCompatActivity implements
                         savedToast.show();
                     } else {
                         Toast unsavedToast = Toast.makeText(getApplicationContext(),
-                                "Oops! Image could not be saved.", Toast.LENGTH_LONG);
+                                "Error, not able to save.", Toast.LENGTH_LONG);
                         unsavedToast.show();
                     }
                     drawingView.destroyDrawingCache();
