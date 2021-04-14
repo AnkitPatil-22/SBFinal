@@ -4,6 +4,10 @@
 
 The app converts your digital handwriting into much more readable format, so the flow of information will be transparent between you and your audience.
 
+## Quick Demo:
+
+<img src="Smart_Board_1.gif" width="256"/>
+
 ## Main features:
 * takes the user's handwriting as input and renders the readable text format.
 * Supports 108 different languages, emojis, and shapes.
@@ -14,9 +18,6 @@ The app converts your digital handwriting into much more readable format, so the
 * for online classes and meetings as a "smart" drawing app.
 * for digital presentation scenarios in offline mode.
 
-## Quick Demo:
-
-<img src="Smart_Board_1.gif" width="256"/>
 
 ## References:
 * https://research.aimultiple.com/handwriting-recognition/
