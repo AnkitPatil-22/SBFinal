@@ -45,52 +45,52 @@ public class HomeScreen extends AppCompatActivity {
 
         });
 
+
         //TO ASK PERMISSION FOR STORAGE
 
-        Button buttonRequest = findViewById(R.id.start_btn);
-        buttonRequest.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                if (ContextCompat.checkSelfPermission(HomeScreen.this,
-                        Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
-                    Toast.makeText(HomeScreen
-                                    .this, "Welcome to SmartBoard !",
-                            Toast.LENGTH_SHORT).show();
-
-                    Intent intent = new Intent(HomeScreen.this, DigitalInkMainActivity.class);
-                    startActivity(intent);
-
-                } else {
-                    requestStoragePermission();
-                }
-            }
-        });
-    }
-    private void requestStoragePermission() {
-        if (ActivityCompat.shouldShowRequestPermissionRationale(this,
-                Manifest.permission.READ_EXTERNAL_STORAGE)) {
-            new androidx.appcompat.app.AlertDialog.Builder(this)
-                    .setTitle("Storage Permission")
-                    .setMessage("This permission is required for save function to work.")
-                    .setPositiveButton("ok", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            ActivityCompat.requestPermissions(HomeScreen.this,
-                                    new String[] {Manifest.permission.READ_EXTERNAL_STORAGE}, STORAGE_PERMISSION_CODE);
-                        }
-                    })
-                    .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            dialog.dismiss();
-                        }
-                    })
-                    .create().show();
-        } else {
-            ActivityCompat.requestPermissions(this,
-                    new String[] {Manifest.permission.READ_EXTERNAL_STORAGE}, STORAGE_PERMISSION_CODE);
-        }
+//        StartButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                if (ContextCompat.checkSelfPermission(HomeScreen.this,
+//                        Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+//                    Toast.makeText(HomeScreen
+//                                    .this, "Welcome to SmartBoard !",
+//                            Toast.LENGTH_SHORT).show();
+//
+//                    Intent intent = new Intent(HomeScreen.this, DigitalInkMainActivity.class);
+//                    startActivity(intent);
+//
+//                } else {
+//                    requestStoragePermission();
+//                }
+//            }
+//        });
+//    }
+//    private void requestStoragePermission() {
+//        if (ActivityCompat.shouldShowRequestPermissionRationale(this,
+//                Manifest.permission.READ_EXTERNAL_STORAGE)) {
+//            new androidx.appcompat.app.AlertDialog.Builder(this)
+//                    .setTitle("Storage permission required")
+//                    .setMessage("This permission is required for proper functioning of app and its feature.")
+//                    .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+//                        @Override
+//                        public void onClick(DialogInterface dialog, int which) {
+//                            ActivityCompat.requestPermissions(HomeScreen.this,
+//                                    new String[] {Manifest.permission.READ_EXTERNAL_STORAGE}, STORAGE_PERMISSION_CODE);
+//                        }
+//                    })
+//                    .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+//                        @Override
+//                        public void onClick(DialogInterface dialog, int which) {
+//                            dialog.dismiss();
+//                        }
+//                    })
+//                    .create().show();
+//        } else {
+//            ActivityCompat.requestPermissions(this,
+//                    new String[] {Manifest.permission.READ_EXTERNAL_STORAGE}, STORAGE_PERMISSION_CODE);
+//        }
 
 //        HelpButton = findViewById(R.id.help_btn);
 //        HelpButton.setOnClickListener(new View.OnClickListener() {

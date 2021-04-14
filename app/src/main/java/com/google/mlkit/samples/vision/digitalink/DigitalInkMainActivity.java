@@ -44,7 +44,7 @@ import java.util.UUID;
 public class DigitalInkMainActivity extends AppCompatActivity implements
         DownloadedModelsChangedListener, View.OnClickListener {
 
-//    private int STORAGE_PERMISSION_CODE = 1;
+    private int STORAGE_PERMISSION_CODE = 1;
     private ImageButton currentStrokePaint,baru,erase,save;
     private DrawingView drawingView;
     ImageView iv1;
@@ -336,10 +336,21 @@ public class DigitalInkMainActivity extends AppCompatActivity implements
                         savedToast.show();
                     } else {
                         Toast unsavedToast = Toast.makeText(getApplicationContext(),
-                                "Error, not able to save.", Toast.LENGTH_LONG);
+                                "Error, something went wrong.", Toast.LENGTH_LONG);
                         unsavedToast.show();
                     }
                     drawingView.destroyDrawingCache();
+
+                    //down
+                    if (ContextCompat.checkSelfPermission(DigitalInkMainActivity.this,
+                            Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+                        Toast.makeText(DigitalInkMainActivity
+                                        .this, "Welcome to SmartBoard !",
+                                Toast.LENGTH_SHORT).show();
+
+                    } else {
+                        requestStoragePermission();
+                    }
                 }
             });
             saveDialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
@@ -351,4 +362,30 @@ public class DigitalInkMainActivity extends AppCompatActivity implements
         }
     }
 
+    private void requestStoragePermission() {
+        if (ActivityCompat.shouldShowRequestPermissionRationale(this,
+                Manifest.permission.READ_EXTERNAL_STORAGE)) {
+            new androidx.appcompat.app.AlertDialog.Builder(this)
+                    .setTitle("Storage permission required")
+                    .setMessage("This permission is required for proper functioning of app and its feature.")
+                    .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            ActivityCompat.requestPermissions(DigitalInkMainActivity.this,
+                                    new String[] {Manifest.permission.READ_EXTERNAL_STORAGE}, STORAGE_PERMISSION_CODE);
+                        }
+                    })
+                    .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    })
+                    .create().show();
+        } else {
+            ActivityCompat.requestPermissions(this,
+                    new String[] {Manifest.permission.READ_EXTERNAL_STORAGE}, STORAGE_PERMISSION_CODE);
+    }
+
+    }
 }
