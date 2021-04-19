@@ -4,6 +4,9 @@
 
 The app converts your digital handwriting into much more readable format, so the flow of information will be transparent between you and your audience.
 
+- [x] Website : https://smartboardlive.wixsite.com/smartboard
+- [x] LinkedIn : https://www.linkedin.com/company/smart-board01/
+
 ## Quick Demo:
 
 <img src="Smart_Board_1.gif" width="256"/>
