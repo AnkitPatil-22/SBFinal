@@ -1,8 +1,10 @@
 package com.smartboard.samples.sbfinal;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
@@ -22,6 +24,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.VisibleForTesting;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSortedSet;
@@ -38,7 +42,7 @@ import java.util.UUID;
 public class DigitalInkMainActivity extends AppCompatActivity implements
         DownloadedModelsChangedListener, View.OnClickListener {
 
-    private int STORAGE_PERMISSION_CODE = 1;
+    private int STORAGE_PERMISSION_CODE = 101;
     private ImageButton currentStrokePaint,baru,erase,save;
     private DrawingView drawingView;
     ImageView iv1;
