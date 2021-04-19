@@ -42,7 +42,7 @@ import java.util.UUID;
 public class DigitalInkMainActivity extends AppCompatActivity implements
         DownloadedModelsChangedListener, View.OnClickListener {
 
-    private int STORAGE_PERMISSION_CODE = 101;
+    public int STORAGE_PERMISSION_CODE = 101;
     private ImageButton currentStrokePaint,baru,erase,save;
     private DrawingView drawingView;
     ImageView iv1;
@@ -334,7 +334,7 @@ public class DigitalInkMainActivity extends AppCompatActivity implements
                         savedToast.show();
                     } else {
                         Toast unsavedToast = Toast.makeText(getApplicationContext(),
-                                "Error, something went wrong.", Toast.LENGTH_LONG);
+                                "Please allow storage permission.", Toast.LENGTH_LONG);
                         unsavedToast.show();
                     }
                     drawingView.destroyDrawingCache();
@@ -343,7 +343,7 @@ public class DigitalInkMainActivity extends AppCompatActivity implements
                     if (ContextCompat.checkSelfPermission(DigitalInkMainActivity.this,
                             Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
                         Toast.makeText(DigitalInkMainActivity
-                                        .this, "Welcome to SmartBoard !",
+                                        .this, "Saved succesfully",
                                 Toast.LENGTH_SHORT).show();
 
                     } else {
