@@ -1,4 +1,4 @@
-package com.google.mlkit.samples.vision.digitalink;
+package com.smartboard.samples.sbfinal;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -17,7 +17,8 @@ import android.util.TypedValue;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.google.mlkit.samples.vision.digitalink.StrokeManager.ContentChangedListener;
+import com.smartboard.samples.sbfinal.R;
+import com.smartboard.samples.sbfinal.StrokeManager.ContentChangedListener;
 import com.google.mlkit.vision.digitalink.Ink;
 
 import java.util.ArrayList;

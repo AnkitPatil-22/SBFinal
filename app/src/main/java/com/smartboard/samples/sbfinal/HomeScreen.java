@@ -1,4 +1,4 @@
-package com.google.mlkit.samples.vision.digitalink;
+package com.smartboard.samples.sbfinal;
 
 import android.Manifest;
 import android.content.DialogInterface;
@@ -12,6 +12,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+
+import com.smartboard.samples.sbfinal.R;
 
 @SuppressWarnings("ALL")
 public class HomeScreen extends AppCompatActivity {
