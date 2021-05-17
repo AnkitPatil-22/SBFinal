@@ -1,55 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--suppress ALL -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.smartboard.samples.sbfinal">
-
-<!--    uses-sdk-->
-<!--    android:minSdkVersion="8"-->
-<!--    android:targetSdkVersion="17" />-->
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <!-- For downloading -->
+    <!-- uses-sdk -->
+    <!-- android:minSdkVersion="8" -->
+    <!-- android:targetSdkVersion="17" /> -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- For downloading -->
     <uses-permission android:name="android.permission.INTERNET" />
-
 
     <application
         android:name="androidx.multidex.MultiDexApplication"
         android:allowBackup="true"
         android:icon="@mipmap/icon"
-        android:supportsRtl="true"
         android:label="Smart Board"
-        tools:replace="android:label"
-        android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
-
-        <activity android:name="com.smartboard.samples.sbfinal.HomeScreen"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
+        tools:replace="android:label">
+        <activity android:name=".Profile"></activity>
+        <activity
+            android:name=".HomeScreen"
             android:screenOrientation="portrait">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name="com.smartboard.samples.sbfinal.SignIn"
-            android:screenOrientation="portrait"
-
-            ></activity>
-
-        <activity android:name="com.smartboard.samples.sbfinal.SignUp"
-            android:screenOrientation="portrait"
-
-            ></activity>
-
         <activity
-            android:name="com.smartboard.samples.sbfinal.DigitalInkMainActivity"
-            android:label="INK"
+            android:name=".SignIn"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SignUp"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".DigitalInkMainActivity"
             android:exported="true"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:parentActivityName="com.smartboard.samples.sbfinal.HomeScreen">
-        </activity>
+            android:label="INK"
+            android:parentActivityName=".HomeScreen"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
 
         <meta-data
             android:name="preloaded_fonts"
