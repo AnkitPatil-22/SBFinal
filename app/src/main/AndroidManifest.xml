@@ -2,13 +2,16 @@
 <!--suppress ALL -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.google.mlkit.samples.vision.digitalink">
+    package="com.smartboard.samples.sbfinal">
 
+<!--    uses-sdk-->
+<!--    android:minSdkVersion="8"-->
+<!--    android:targetSdkVersion="17" />-->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <!-- For downloading -->
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
-        tools:ignore="ScopedStorage" />
 
 
     <application
@@ -20,7 +23,8 @@
         tools:replace="android:label"
         android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
 
-        <activity android:name=".HomeScreen">
+        <activity android:name="com.smartboard.samples.sbfinal.HomeScreen"
+            android:screenOrientation="portrait">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,30 +33,22 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".SignIn"
+        <activity android:name="com.smartboard.samples.sbfinal.SignIn"
+            android:screenOrientation="portrait"
 
             ></activity>
 
-        <activity android:name=".SignUp"
+        <activity android:name="com.smartboard.samples.sbfinal.SignUp"
+            android:screenOrientation="portrait"
 
             ></activity>
 
         <activity
-            android:name=".DigitalInkMainActivity"
+            android:name="com.smartboard.samples.sbfinal.DigitalInkMainActivity"
             android:label="INK"
             android:exported="true"
-            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
-            android:parentActivityName=".HomeScreen">
-        </activity>
-
-        <activity
-            android:name=".MainScreen"
-            android:label="INK"
-            android:exported="true"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:parentActivityName=".HomeScreen">
+            android:parentActivityName="com.smartboard.samples.sbfinal.HomeScreen">
         </activity>
 
         <meta-data
